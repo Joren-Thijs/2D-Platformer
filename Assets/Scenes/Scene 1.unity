@@ -272,6 +272,7 @@ GameObject:
   m_Component:
   - component: {fileID: 312175335}
   - component: {fileID: 312175336}
+  - component: {fileID: 312175337}
   m_Layer: 10
   m_Name: background
   m_TagString: Untagged
@@ -343,6 +344,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &312175337
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312175334}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.84, y: 2.4}
+    newSize: {x: 3.84, y: 2.4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -1.92, y: 1.1999999}
+      - {x: -1.92, y: -1.1999999}
+      - {x: 1.92, y: -1.1999999}
+      - {x: 1.92, y: 1.1999999}
 --- !u!1 &365536188
 GameObject:
   m_ObjectHideFlags: 0
@@ -3826,12 +3856,12 @@ GameObject:
   m_Component:
   - component: {fileID: 759367756}
   - component: {fileID: 759367761}
-  - component: {fileID: 759367760}
-  - component: {fileID: 759367759}
   - component: {fileID: 759367758}
+  - component: {fileID: 759367760}
   - component: {fileID: 759367757}
-  - component: {fileID: 759367762}
   - component: {fileID: 759367763}
+  - component: {fileID: 759367759}
+  - component: {fileID: 759367762}
   m_Layer: 9
   m_Name: player
   m_TagString: Player
@@ -3901,7 +3931,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 759367755}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61af1e617fd313c4b898be0a5233e761, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c9eb3f398ea7c446bf1ceab7012cf1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_JumpForce: 700
@@ -3910,7 +3940,7 @@ MonoBehaviour:
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 567
   m_GroundCheck: {fileID: 1588239504}
   m_CeilingCheck: {fileID: 1267876587}
   m_CrouchDisableCollider: {fileID: 759367760}
@@ -4027,7 +4057,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 759367755}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbf33a3578480c74fa65b1b2b9a1c5cd, type: 3}
+  m_Script: {fileID: 11500000, guid: d5b162fc3a3f0b842a3f831f9c1c7a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 759367759}
@@ -4052,6 +4082,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &771303770 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7056519744499162294, guid: 0fa042fe2f4d4784ba88b7d654376711,
+    type: 3}
+  m_PrefabInstance: {fileID: 7056519744644402944}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &771303772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771303770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2fba25a5cd15594e8f050a11e386c80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ConfineMode: 0
+  m_BoundingVolume: {fileID: 0}
+  m_BoundingShape2D: {fileID: 312175337}
+  m_ConfineScreenEdges: 1
+  m_Damping: 0
 --- !u!1 &1267876586
 GameObject:
   m_ObjectHideFlags: 0
