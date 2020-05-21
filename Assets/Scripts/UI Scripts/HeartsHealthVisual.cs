@@ -76,7 +76,7 @@ public class HeartsHealthVisual : MonoBehaviour
         // Create heart object
         GameObject heartGameObject = new GameObject("Heart", typeof(Image));
 
-        heartGameObject.transform.parent = transform;
+        heartGameObject.transform.SetParent(transform);
         heartGameObject.transform.localPosition = Vector3.zero;
 
         // Location and size of the heart
