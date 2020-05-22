@@ -11,6 +11,18 @@ TextureImporter:
   - first:
       213: 7724650000366299499
     second: HeartsStrip_2
+  - first:
+      213: 1126102425801713266
+    second: HeartsStrip_3
+  - first:
+      213: -8669817676149070071
+    second: HeartsStrip_4
+  - first:
+      213: -7272726958991486050
+    second: HeartsStrip_5
+  - first:
+      213: 1386248023736842367
+    second: HeartsStrip_6
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -99,8 +111,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 7
+        y: 42
+        width: 21
         height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -119,9 +131,9 @@ TextureImporter:
       name: HeartsStrip_1
       rect:
         serializedVersion: 2
-        x: 7
-        y: 0
-        width: 7
+        x: 0
+        y: 35
+        width: 21
         height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -140,9 +152,9 @@ TextureImporter:
       name: HeartsStrip_2
       rect:
         serializedVersion: 2
-        x: 14
-        y: 0
-        width: 7
+        x: 0
+        y: 28
+        width: 21
         height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -153,6 +165,90 @@ TextureImporter:
       bones: []
       spriteID: b69ed069f38733b60800000000000000
       internalID: 7724650000366299499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartsStrip_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 21
+        width: 21
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 276ed9e9038b0af00800000000000000
+      internalID: 1126102425801713266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartsStrip_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 14
+        width: 21
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9076bb912ce9ea780800000000000000
+      internalID: -8669817676149070071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartsStrip_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7
+        width: 21
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e93d7e40d55121b90800000000000000
+      internalID: -7272726958991486050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeartsStrip_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 21
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f78fb61ab31fc3310800000000000000
+      internalID: 1386248023736842367
       vertices: []
       indices: 
       edges: []
