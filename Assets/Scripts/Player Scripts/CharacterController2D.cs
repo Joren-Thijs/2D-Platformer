@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class CharacterController2D : MonoBehaviour
 {
@@ -18,6 +19,10 @@ public class CharacterController2D : MonoBehaviour
     private Rigidbody2D m_Rigidbody2D;
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
     private Vector3 m_Velocity = Vector3.zero;
+
+    // Player Stats
+    public int currentHealth;
+    public int maxHealth = 6;
 
     [Header("Events")]
     [Space]
@@ -39,6 +44,8 @@ public class CharacterController2D : MonoBehaviour
 
         if (OnCrouchEvent == null)
             OnCrouchEvent = new BoolEvent();
+
+        currentHealth = maxHealth;
     }
 
     private void FixedUpdate()
@@ -58,6 +65,15 @@ public class CharacterController2D : MonoBehaviour
                     OnLandEvent.Invoke();
             }
         }
+
+        if (currentHealth > maxHealth) {
+            currentHealth = maxHealth;
+        }
+
+        if (currentHealth <= 0) {
+            Die();
+        }
+
     }
 
 
@@ -143,5 +159,9 @@ public class CharacterController2D : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+    }
+
+    private void Die() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
