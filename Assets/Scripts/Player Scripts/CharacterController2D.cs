@@ -177,10 +177,18 @@ public class CharacterController2D : MonoBehaviour
 
             animator.SetBool("IsHurt", true);
 
+            int pushDir = 0;
+
             while(knockDur > timer) {
                 timer += Time.deltaTime;
 
-                m_Rigidbody2D.AddForce(new Vector3(knockbackDir.x * -10, knockbackDir.y * knockbackPower, transform.position.z));
+                if (m_FacingRight == true) {
+                    pushDir = 1;
+                } else {
+                    pushDir =  -1;
+                }
+
+                m_Rigidbody2D.AddForce(new Vector3(knockbackDir.x * 20 * pushDir, knockbackDir.y * knockbackPower, transform.position.z));
             }
             yield return 0;
     }
