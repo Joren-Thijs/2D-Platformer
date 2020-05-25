@@ -13,7 +13,8 @@ public class HeartsHealthVisual : MonoBehaviour
     private List<HeartImage> heartImageList;
     private HeartsHealthSystem heartsHealthSystem;
 
-    void Awake() {
+    void Awake()
+    {
         heartImageList = new List<HeartImage>();
     }
 
@@ -27,23 +28,27 @@ public class HeartsHealthVisual : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E)) {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
             Debug.Log("Took damage for 1 point(s).");
             heartsHealthSystem.TakeDamage(1);
         }
 
-        if (Input.GetKeyDown(KeyCode.R)) {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
             Debug.Log("Healed for 1 point(s).");
             heartsHealthSystem.Heal(1);
         }
     }
 
-    public void SetHeartsHealthSystem(HeartsHealthSystem heartsHealthSystem) {
+    public void SetHeartsHealthSystem(HeartsHealthSystem heartsHealthSystem)
+    {
         this.heartsHealthSystem = heartsHealthSystem;
 
         List<HeartsHealthSystem.Heart> heartList = heartsHealthSystem.GetHeartList();
         Vector2 heartAnchoredPosition = new Vector2(0, 0);
-        for (int i = 0; i < heartList.Count; i++) {
+        for (int i = 0; i < heartList.Count; i++)
+        {
             HeartsHealthSystem.Heart heart = heartList[i];
             CreateHeartImage(heartAnchoredPosition).SetHeartState(heart.GetStates());
             heartAnchoredPosition += new Vector2(30, 0);
@@ -53,26 +58,31 @@ public class HeartsHealthVisual : MonoBehaviour
         heartsHealthSystem.OnHealed += HeartsHealthSystem_OnHealed;
     }
 
-    private void HeartsHealthSystem_OnDamaged(object sender, System.EventArgs e) {
+    private void HeartsHealthSystem_OnDamaged(object sender, System.EventArgs e)
+    {
         // Health system was damaged
         RefreshAllHearts();
     }
 
-    private void HeartsHealthSystem_OnHealed(object sender, System.EventArgs e) {
+    private void HeartsHealthSystem_OnHealed(object sender, System.EventArgs e)
+    {
         // Health system was healed
         RefreshAllHearts();
     }
 
-    private void RefreshAllHearts() {
+    private void RefreshAllHearts()
+    {
         List<HeartsHealthSystem.Heart> heartList = heartsHealthSystem.GetHeartList();
-        for (int i = 0; i < heartImageList.Count; i++) {
+        for (int i = 0; i < heartImageList.Count; i++)
+        {
             HeartImage heartImage = heartImageList[i];
             HeartsHealthSystem.Heart heart = heartList[i];
             heartImage.SetHeartState(heart.GetStates());
         }
     }
-    
-    private HeartImage CreateHeartImage(Vector2 anchoredPosition) {
+
+    private HeartImage CreateHeartImage(Vector2 anchoredPosition)
+    {
         // Create heart object
         GameObject heartGameObject = new GameObject("Heart", typeof(Image));
 
@@ -94,18 +104,22 @@ public class HeartsHealthVisual : MonoBehaviour
     }
 
     // Represemts a single Heart
-    public class HeartImage {
+    public class HeartImage
+    {
 
         private Image heartImage;
         private HeartsHealthVisual heartsHealthVisual;
 
-        public HeartImage(HeartsHealthVisual heartsHealthVisual, Image heartImage) {
+        public HeartImage(HeartsHealthVisual heartsHealthVisual, Image heartImage)
+        {
             this.heartsHealthVisual = heartsHealthVisual;
             this.heartImage = heartImage;
         }
 
-        public void SetHeartState(int state) {
-            switch (state) {
+        public void SetHeartState(int state)
+        {
+            switch (state)
+            {
                 case 0: heartImage.sprite = heartsHealthVisual.heartEmptySprite; break; // Empty heart
                 case 1: heartImage.sprite = heartsHealthVisual.heartHalfSprite; break;  // Half heart
                 case 2: heartImage.sprite = heartsHealthVisual.heartFullSprite; break;  // Full heart

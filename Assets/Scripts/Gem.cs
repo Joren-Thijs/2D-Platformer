@@ -14,12 +14,6 @@ public class Gem : MonoBehaviour
         display = GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreDisplay>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.CompareTag("Player"))

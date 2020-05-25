@@ -243,6 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c9eb3f398ea7c446bf1ceab7012cf1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 9053320505073620595}
   m_JumpForce: 400
   m_CrouchSpeed: 0.4
   m_MovementSmoothing: 0.05
@@ -253,6 +254,8 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 9053320503707943600}
   m_CeilingCheck: {fileID: 9053320503359249611}
   m_CrouchDisableCollider: {fileID: 9053320505073620592}
+  currentHealth: 0
+  maxHealth: 6
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
