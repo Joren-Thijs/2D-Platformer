@@ -69,11 +69,13 @@ public class CharacterController2D : MonoBehaviour
             }
         }
 
-        if (currentHealth > maxHealth) {
+        if (currentHealth > maxHealth)
+        {
             currentHealth = maxHealth;
         }
 
-        if (currentHealth <= 0) {
+        if (currentHealth <= 0)
+        {
             Die();
         }
 
@@ -164,32 +166,28 @@ public class CharacterController2D : MonoBehaviour
         transform.localScale = theScale;
     }
 
-    private void Die() {
+    private void Die()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void TakeDamage(int amount) {
+    public void TakeDamage(int amount)
+    {
         currentHealth -= amount;
     }
 
-    public IEnumerator Knockback(float knockDur, float knockbackPower, Vector3 knockbackDir) {
-            float timer = 0;
+    public IEnumerator Knockback(float knockDur, float knockbackPower)
+    {
+        float timer = 0;
 
-            animator.SetBool("IsHurt", true);
+        animator.SetBool("IsHurt", true);
 
-            int pushDir = 0;
+        while (knockDur > timer)
+        {
+            timer += Time.deltaTime;
 
-            while(knockDur > timer) {
-                timer += Time.deltaTime;
-
-                if (m_FacingRight == true) {
-                    pushDir = 1;
-                } else {
-                    pushDir =  -1;
-                }
-
-                m_Rigidbody2D.AddForce(new Vector3(knockbackDir.x * 20 * pushDir, knockbackDir.y * knockbackPower, transform.position.z));
-            }
-            yield return 0;
+            m_Rigidbody2D.AddForce(new Vector2(m_Rigidbody2D.velocity.x * -100, 6 * knockbackPower));
+        }
+        yield return 0;
     }
 }

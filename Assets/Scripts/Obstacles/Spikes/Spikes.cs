@@ -8,14 +8,17 @@ public class Spikes : MonoBehaviour
 
     private bool tookDamage = false;
 
-    void Start() {
+    void Start()
+    {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController2D>();
 
     }
 
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         // Stop the player and add force upwards when hurt
-        if(tookDamage == true) {
+        if (tookDamage == true)
+        {
             Debug.Log("Test");
             player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             player.GetComponent<Rigidbody2D>().angularVelocity = 0;
@@ -23,13 +26,15 @@ public class Spikes : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D col) {
-        if(col.CompareTag("Player")) {
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Player"))
+        {
             //Debug.Log("Took damage!");
             player.TakeDamage(1);
             tookDamage = true;
 
-            StartCoroutine(player.Knockback(0.03f, 40, player.transform.position));
+            StartCoroutine(player.Knockback(0.03f, 40));
         }
     }
 }
