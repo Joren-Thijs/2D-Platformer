@@ -176,6 +176,11 @@ public class CharacterController2D : MonoBehaviour
         currentHealth -= amount;
     }
 
+    public void HealUp(int amount) 
+    {
+        currentHealth += amount;
+    }
+
     public IEnumerator Knockback(float knockDur, float knockbackPower)
     {
         float timer = 0;
