@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9053320503707943599}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.019, y: -0.1594, z: 0}
+  m_LocalPosition: {x: 0.019, y: -0.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9053320505073620588}
@@ -90,7 +90,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9053320505073620587}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -27.21, y: 0.64, z: 0}
   m_LocalScale: {x: 3.282, y: 3.621, z: 1}
   m_Children:
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c9eb3f398ea7c446bf1ceab7012cf1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 700
+  m_JumpForce: 400
   m_CrouchSpeed: 0.4
   m_MovementSmoothing: 0.05
   m_AirControl: 1
