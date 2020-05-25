@@ -1,9 +1,12 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class CharacterController2D : MonoBehaviour
 {
+    public Animator animator;
+
     [SerializeField] private float m_JumpForce = 400f;                          // Amount of force added when the player jumps.
     [Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;          // Amount of maxSpeed applied to crouching movement. 1 = 100%
     [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;  // How much to smooth out the movement
@@ -163,5 +166,30 @@ public class CharacterController2D : MonoBehaviour
 
     private void Die() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void TakeDamage(int amount) {
+        currentHealth -= amount;
+    }
+
+    public IEnumerator Knockback(float knockDur, float knockbackPower, Vector3 knockbackDir) {
+            float timer = 0;
+
+            animator.SetBool("IsHurt", true);
+
+            int pushDir = 0;
+
+            while(knockDur > timer) {
+                timer += Time.deltaTime;
+
+                if (m_FacingRight == true) {
+                    pushDir = 1;
+                } else {
+                    pushDir =  -1;
+                }
+
+                m_Rigidbody2D.AddForce(new Vector3(knockbackDir.x * 20 * pushDir, knockbackDir.y * knockbackPower, transform.position.z));
+            }
+            yield return 0;
     }
 }
